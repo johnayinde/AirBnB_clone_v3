@@ -1,6 +1,2 @@
-*~
-\#*
 __pycache__
-dev/file.json
-7-dump.sql
-test_*
+*.pyc

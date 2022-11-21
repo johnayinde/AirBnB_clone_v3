@@ -1,100 +1,61 @@
-<img src="https://github.com/johncoleman83/AirBnB_clone/blob/master/dev/HBTN-hbnb-Final.png" width="160" height=auto />
+# Synopsis
 
-# AirBnB Clone Phase #3
-
-## Description
-
-Project attempts to clone the the AirBnB application and website, including the
-database, storage, RESTful API, Web Framework, and Front End.
-
-## Environment
-
-* __OS:__ Ubuntu 14.04 LTS
-* __language:__ Python 3.4.3
-* __style:__ PEP 8 (v. 1.7.0)
-
-<img src="https://github.com/johncoleman83/AirBnB_clone/blob/master/dev/hbnb_step5.png" />
-
-## Testing
+> The Airbnb clone project for which we are creating a copy of the [Airbnb](https://www.airbnb.com/).
+> Only some features will be implemented and will be listed below once completed.
+> At this stage, we are implementing an additional storage option. Based on which 
+> database is chosen (file storage or database storage), JSON is used or
+> MySQL and SQLalchemy is used via Python. Fabric is used for application deployment.
 
 
-#### `unittest`
+## Features
 
-This project uses python library, `unittest` to run tests on all python files.
-All unittests are in the `./tests` directory with the command:
+### Command Interpreter
 
-* `python3 -m unittest discover -v ./tests/`
+#### Description
 
-The bash script `init_test.sh` executes all these tests:
+The Command Interpreter is used to manage the whole application's functionality from the command line, such as:
++ Create a new object.
++ Retrieve an object from a file, database, etc.
++ Execute operation on objects. e.g. Count, compute statistics, etc.
++ Update object's attributes.
++ Destroy an object.
 
-  * checks `pep8` style
+#### Usage
 
-  * runs all unittests
+To launch the console application in interactive mode simply run:
 
-  * runs all w3c_validator tests
+```console.py ```
 
-  * cleans up all `__pycache__` directories and the storage file, `file.json`
+or to use the non-interactive mode run:
 
-**Usage:**
+```echo "your-command-goes-here" | ./console.py ```
 
-```
-$ ./dev/init_test.sh
-```
+#### Commands
 
-#### CLI Interactive Tests
+Commands | Description | Usage
+-------- | ----------- |-------- |
+**help** or **?**| Displays the documented commands. | **help**
+**quit**     | Exits the program. | **quit**
+**EOF**      | Ends the program. Used when files are passed into the program. | N/A
+**create**  | Creates a new instance of the \<class_name\>. Creates a Json file with the object representation. and prints the id of created object. | **create** \<class_name\>
+**show**    | Prints the string representation of an instance based on the class name and id. | **show** \<class_name class_id\>
+**destroy** | Deletes and instance base on the class name and id. | **destroy** \<class_name class_id\>
+**all** | Prints all string representation of all instances based or not on the class name | **all** or **all** \<class_name class_id\>
+**update** | Updates an instance based on the class name and id by adding or updating attribute | **update** \<class_name class_id key value\>
 
-This project uses python library, `cmd` to run tests in an interactive command
-line interface.  To begin tests with the CLI, run this script:
+## Resources
+* Fabric: [Usage1](https://www.digitalocean.com/community/tutorials/how-to-use-fabric-to-automate-administration-tasks-and-deployments), [Usage2](https://www.pythonforbeginners.com/systems-programming/how-to-use-fabric-in-python), [Documenation](http://www.fabfile.org/)
+* Nginx: [Beginner's Config file](http://nginx.org/en/docs/beginners_guide.html), [Root vs Alias](https://blog.heitorsilva.com/en/nginx/diferenca-entre-root-e-alias-do-nginx/), 
 
-```
-$ ./console.py
-```
+## Tests
 
-* For a detailed description of all tests, run these commands inside the
-custom CLI:
+If you wish to run at the test for this application all of the test are located
+under the **test/** folder and can execute all of them by simply running:
 
-```
-$ ./console.py
-(hbnb) help help
-List available commands with "help" or detailed help with "help cmd".
-(hbnb) help
+```python3 -m unittest discover tests ```
 
-Documented commands (type help <topic>):
-========================================
-Amenity    City  Place   State  airbnb  create   help  show
-BaseModel  EOF   Review  User   all     destroy  quit  update
+from the root directory.
 
-(hbnb) help User
-class method with .function() syntax
-        Usage: User.<command>(<id>)
-(hbnb) help create
-create: create [ARG]
-        ARG = Class Name
-        SYNOPSIS: Creates a new instance of the Class from given input ARG
-```
+## Bugs
 
-* Tests in the CLI may also be executed with this syntax:
-
-  * **destroy:** `<class name>.destroy(<id>)`
-
-  * **update:** `<class name>.update(<id>, <attribute name>, <attribute value>)`
-
-  * **update with dictionary:** `<class name>.update(<id>, <dictionary representation>)`
-
-
-#### Continuous Integration
-
-Uses [Travis-CI](https://travis-ci.org/) to run all tests on all commits to the
-github repo
-
-## Authors
-
-* MJ Johnson, [@mj31508](https://github.com/mj31508)
-* David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
-* Kimberly Wong, [kjowong](http://github.com/kjowong) | [@kjowong](http://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
-* Carrie Ybay, [hicarrie](http://github.com/hicarrie) | [@hicarrie_](http://twitter.com/hicarrie_)
-* Elaine Yeung, [yeungegs](http://github.com/yeungegs) | [@egsy](http://twitter.com/egsy)
-
-## License
-
-Public Domain, no copyright protection
++ No known bugs at this time.
